@@ -497,21 +497,135 @@ Chabora Ventures is a creative consultancy led by Robert Chasia helping business
 </div>
 <form action="https://formsubmit.co/robertchasia2@gmail.com" method="POST">
 
-  <input type="text" name="name" placeholder="Your Name" required>
+  <!-- BOOKING SECTION START -->
+<style>
+  .booking-container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 25px;
+    border-radius: 15px;
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+    animation: fadeIn 1s ease;
+  }
 
-  <input type="email" name="email" placeholder="Your Email" required>
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
 
-  <input type="date" name="date" required>
+  .booking-container h2 {
+    text-align: center;
+    margin-bottom: 15px;
+  }
 
-  <input type="time" name="time" required>
+  select, input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
 
-  <textarea name="message" placeholder="Booking details"></textarea>
+  .time-slots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px 0;
+  }
 
-  <!-- Settings -->
-  <input type="hidden" name="_subject" value="New Booking Request">
-  <input type="hidden" name="_captcha" value="false">
+  .slot {
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid #333;
+    cursor: pointer;
+    transition: 0.3s;
+  }
 
-  <button type="submit">Book Now</button>
+  .slot:hover {
+    background: black;
+    color: white;
+  }
+
+  .slot.active {
+    background: green;
+    color: white;
+    border: none;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: black;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background: green;
+  }
+</style>
+
+<div class="booking-container">
+  <h2>Book a Session</h2>
+
+  <form action="https://formsubmit.co/robertchasia2@gmail.com" method="POST">
+
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+
+    <!-- Service -->
+    <select name="service" required>
+      <option value="">Select Service</option>
+      <option>Photography</option>
+      <option>Videography</option>
+      <option>Event Coverage</option>
+    </select>
+
+    <!-- Date -->
+    <input type="date" name="date" required>
+
+    <!-- Time Slots -->
+    <div class="time-slots" id="slots">
+      <div class="slot">9:00 AM</div>
+      <div class="slot">10:00 AM</div>
+      <div class="slot">11:00 AM</div>
+      <div class="slot">1:00 PM</div>
+      <div class="slot">2:00 PM</div>
+      <div class="slot">3:00 PM</div>
+    </div>
+
+    <input type="hidden" name="time" id="selectedTime">
+
+    <textarea name="message" placeholder="Additional details"></textarea>
+
+    <!-- Settings -->
+    <input type="hidden" name="_subject" value="New Booking Request">
+    <input type="hidden" name="_captcha" value="false">
+
+    <button type="submit">Confirm Booking</button>
+
+  </form>
+</div>
+
+<script>
+  const slots = document.querySelectorAll(".slot");
+  const selectedTime = document.getElementById("selectedTime");
+
+  slots.forEach(slot => {
+    slot.addEventListener("click", () => {
+      slots.forEach(s => s.classList.remove("active"));
+      slot.classList.add("active");
+      selectedTime.value = slot.innerText;
+    });
+  });
+</script>
+<!-- BOOKING SECTION END -->
 
 </form>
 </div>
