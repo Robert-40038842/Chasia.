@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,30 +6,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta name="description" content="Chabora Ventures - Media, Branding and Digital Growth Consultancy">
-
-<meta name="theme-color" content="#080808">
+<meta name="theme-color" content="#252525">
 
 <title>Chabora Ventures | Creative Media Agency</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
-/* =====================================
-   1. GLOBAL SETTINGS
-===================================== */
+/* =================================
+   1. BRAND IDENTITY
+================================= */
 
 :root {
-  --gold: #D4AF37;
-  --gold-light: #F5E6A8;
-  --gold-dark: #B8860B;
-  --black: #080808;
-  --panel: #141414;
-  --white: #f7f5f0;
-  --muted: #aaa49a;
+  --graphite: #252525;
+  --graphite-dark: #171717;
+  --graphite-light: #333333;
+  --burgundy: #8B2635;
+  --burgundy-light: #B34A59;
+  --burgundy-dark: #601925;
+  --ivory: #F4F0EA;
+  --muted: #B5AEA8;
+  --white: #FFFFFF;
+  --panel: #2D2D2D;
 }
 
 * {
@@ -40,11 +41,12 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 85px;
 }
 
 body {
-  background: var(--black);
-  color: var(--white);
+  background: var(--graphite);
+  color: var(--ivory);
   font-family: 'DM Sans', sans-serif;
   line-height: 1.7;
   overflow-x: hidden;
@@ -60,10 +62,7 @@ img {
   display: block;
 }
 
-button,
-input,
-textarea,
-select {
+button, input, textarea, select {
   font: inherit;
 }
 
@@ -77,11 +76,11 @@ section {
 }
 
 .section-label {
-  color: var(--gold);
+  color: var(--burgundy-light);
   text-transform: uppercase;
   letter-spacing: 4px;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .section-title {
@@ -94,48 +93,56 @@ section {
   max-width: 650px;
 }
 
-.gold {
-  color: var(--gold);
+.burgundy {
+  color: var(--burgundy-light);
 }
 
-/* =====================================
+/* =================================
    2. BUTTONS
-===================================== */
+================================= */
 
 .btn {
   display: inline-block;
-  padding: 13px 25px;
-  border: 1px solid var(--gold);
-  color: var(--black);
-  background: var(--gold);
+  padding: 14px 26px;
+  border: 1px solid var(--burgundy);
+  color: var(--ivory);
+  background: var(--burgundy);
   font-weight: 700;
   border-radius: 3px;
-  transition: .3s;
+  transition: .35s ease;
   cursor: pointer;
+  text-align: center;
 }
 
 .btn:hover {
-  background: transparent;
-  color: var(--gold);
-  transform: translateY(-3px);
+  background: var(--burgundy-light);
+  border-color: var(--burgundy-light);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(139,38,53,.3);
 }
 
 .btn-outline {
   background: transparent;
-  color: var(--gold);
+  color: var(--ivory);
+  border-color: rgba(244,240,234,.5);
 }
 
-/* =====================================
+.btn-outline:hover {
+  background: var(--burgundy);
+  border-color: var(--burgundy);
+}
+
+/* =================================
    3. NAVIGATION
-===================================== */
+================================= */
 
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(8,8,8,.95);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid #252525;
+  background: rgba(37,37,37,.94);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
 nav {
@@ -148,15 +155,16 @@ nav {
 .logo {
   font: 800 25px 'Playfair Display', serif;
   letter-spacing: 1px;
+  white-space: nowrap;
 }
 
 .logo span {
-  color: var(--gold);
+  color: var(--burgundy-light);
 }
 
 .nav-links {
   display: flex;
-  gap: 27px;
+  gap: 25px;
   align-items: center;
 }
 
@@ -167,76 +175,106 @@ nav {
 }
 
 .nav-links a:hover {
-  color: var(--gold);
+  color: var(--burgundy-light);
 }
 
 .menu-toggle {
   display: none;
   background: none;
   border: 0;
-  color: var(--gold);
+  color: var(--ivory);
   font-size: 28px;
   cursor: pointer;
 }
 
-/* =====================================
-   4. HERO SECTION
-===================================== */
+/* =================================
+   4. CINEMATIC HERO
+================================= */
 
 .hero {
-  min-height: 88vh;
+  min-height: 92vh;
   display: flex;
   align-items: center;
   position: relative;
   overflow: hidden;
 
   background:
-    radial-gradient(
-      ellipse at 80% 30%,
-      rgba(212,175,55,.18) 0%,
-      transparent 42%
+    linear-gradient(
+      90deg,
+      rgba(20,20,20,.94) 0%,
+      rgba(25,25,25,.78) 48%,
+      rgba(25,25,25,.35) 100%
     ),
-    linear-gradient(135deg,#080808,#111111);
+    linear-gradient(
+      0deg,
+      rgba(37,37,37,.6),
+      transparent
+    ),
+    url('1.jpeg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 85% 50%,
+    rgba(139,38,53,.22),
+    transparent 50%
+  );
+  pointer-events: none;
 }
 
 .hero::after {
   content: "";
   position: absolute;
-  width: 450px;
-  height: 450px;
-  right: -150px;
-  top: 10%;
-  background: rgba(212,175,55,.06);
-  filter: blur(100px);
-  border-radius: 50%;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 130px;
+  background: linear-gradient(transparent,var(--graphite));
   pointer-events: none;
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   max-width: 780px;
+  padding: 60px 0;
 }
 
 .hero h1 {
   font: 800 clamp(3rem,8vw,6.5rem)/1.04 'Playfair Display',serif;
   margin: 22px 0;
-}
-
-.hero-title {
-  animation: titleReveal 1.5s ease-out forwards;
+  animation: titleReveal 1.2s ease forwards;
 }
 
 .hero-title span {
-  background: linear-gradient(
-    135deg,
-    #D4AF37,
-    #F5E6A8,
-    #B8860B
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #D47B87;
+}
+
+.hero p {
+  max-width: 620px;
+  color: #E0DCD8;
+  font-size: 17px;
+  margin-bottom: 30px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.hero-note {
+  margin-top: 45px;
+  color: #D1C7C5;
+  font-size: 11px;
+  letter-spacing: 3px;
 }
 
 @keyframes titleReveal {
@@ -250,76 +288,57 @@ nav {
   }
 }
 
-.hero p {
-  max-width: 620px;
-  color: #c5c0b7;
-  font-size: 17px;
-  margin-bottom: 30px;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.hero-note {
-  margin-top: 50px;
-  color: #888;
-  font-size: 12px;
-  letter-spacing: 2px;
-}
-
-/* =====================================
-   5. CREATIVE EDITING VISUAL
-===================================== */
+/* =================================
+   5. CREATIVE EDITING TIMELINE
+================================= */
 
 .editing-visual {
   position: absolute;
   right: 5%;
-  bottom: 10%;
-  width: min(430px,42%);
+  bottom: 12%;
+  width: min(400px,36%);
   padding: 18px;
-  background: rgba(15,15,15,.82);
-  border: 1px solid #554326;
-  border-radius: 9px;
+  background: rgba(30,30,30,.88);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(179,74,89,.5);
+  border-radius: 8px;
   transform: rotate(-4deg);
   box-shadow: 0 20px 70px #000;
+  z-index: 3;
 }
 
 .timeline-top {
   display: flex;
   justify-content: space-between;
-  color: var(--gold);
+  color: #D47B87;
   font-size: 11px;
   margin-bottom: 15px;
   letter-spacing: 2px;
 }
 
 .timeline-track {
-  height: 35px;
+  height: 32px;
   display: flex;
   gap: 5px;
   margin: 7px 0;
-  position: relative;
   overflow: hidden;
 }
 
 .clip {
   height: 100%;
   border-radius: 3px;
-  background: linear-gradient(120deg,#6e4d25,#c89a50);
+  background: linear-gradient(120deg,#60202C,#B34A59);
   animation: clipGlow 3s infinite alternate;
 }
 
 .clip:nth-child(1) { width: 28%; }
 .clip:nth-child(2) {
   width: 40%;
-  background: linear-gradient(120deg,#34464a,#7d9c99);
+  background: linear-gradient(120deg,#454545,#A7A7A7);
 }
 .clip:nth-child(3) {
   width: 25%;
-  background: linear-gradient(120deg,#68433c,#b77a5c);
+  background: linear-gradient(120deg,#60202C,#D47B87);
 }
 
 .audio-track {
@@ -334,19 +353,19 @@ nav {
   display: block;
   width: 4px;
   height: var(--h);
-  background: var(--gold);
+  background: var(--burgundy-light);
   border-radius: 5px;
   animation: wave .7s infinite alternate;
 }
 
 .playhead {
   position: absolute;
-  top: 40px;
-  bottom: 10px;
+  top: 0;
+  bottom: 0;
   left: 10%;
   width: 2px;
   background: white;
-  box-shadow: 0 0 12px var(--gold);
+  box-shadow: 0 0 12px var(--burgundy-light);
   animation: play 5s linear infinite;
 }
 
@@ -362,12 +381,12 @@ nav {
 }
 
 @keyframes clipGlow {
-  to { filter: brightness(1.35); }
+  to { filter: brightness(1.4); }
 }
 
-/* =====================================
-   6. ABOUT SECTION
-===================================== */
+/* =================================
+   6. ABOUT
+================================= */
 
 .about-grid {
   display: grid;
@@ -377,9 +396,11 @@ nav {
 }
 
 .about-image {
-  min-height: 420px;
-  background: linear-gradient(145deg,#302516,#111);
-  border: 1px solid #4b3a20;
+  min-height: 430px;
+  background:
+    linear-gradient(rgba(30,20,22,.35),rgba(30,20,22,.85)),
+    url('4.jpeg') center/cover no-repeat;
+  border: 1px solid rgba(179,74,89,.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -389,7 +410,12 @@ nav {
 
 .about-image strong {
   font: 700 38px 'Playfair Display',serif;
-  color: var(--gold);
+  color: var(--ivory);
+  text-shadow: 0 3px 20px #000;
+}
+
+.about-image p {
+  color: #E2D9D8;
 }
 
 .stats {
@@ -401,8 +427,8 @@ nav {
 
 .stat strong {
   display: block;
-  color: var(--gold);
-  font-size: 25px;
+  color: var(--burgundy-light);
+  font-size: 27px;
 }
 
 .stat span {
@@ -410,15 +436,15 @@ nav {
   font-size: 12px;
 }
 
-/* =====================================
+/* =================================
    7. SERVICES
-===================================== */
+================================= */
 
 .services,
 .featured,
 .experience,
 .testimonials {
-  background: #101010;
+  background: var(--graphite-dark);
 }
 
 .service-grid {
@@ -429,19 +455,37 @@ nav {
 }
 
 .service-card {
-  padding: 30px;
+  padding: 32px;
   background: var(--panel);
-  border: 1px solid #292929;
-  transition: .3s;
+  border: 1px solid rgba(255,255,255,.08);
+  transition: .35s;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--burgundy-light);
+  transition: .35s;
+}
+
+.service-card:hover::before {
+  width: 100%;
 }
 
 .service-card:hover {
-  transform: translateY(-7px);
-  border-color: var(--gold);
+  transform: translateY(-8px);
+  border-color: var(--burgundy);
+  box-shadow: 0 15px 35px rgba(0,0,0,.25);
 }
 
 .service-icon {
-  font-size: 30px;
+  font-size: 32px;
   margin-bottom: 15px;
 }
 
@@ -455,9 +499,9 @@ nav {
   font-size: 14px;
 }
 
-/* =====================================
+/* =================================
    8. PORTFOLIO
-===================================== */
+================================= */
 
 .portfolio-filters {
   display: flex;
@@ -469,18 +513,18 @@ nav {
 
 .filter-btn {
   padding: 10px 20px;
-  color: var(--white);
-  background: #171717;
-  border: 1px solid #383838;
+  color: var(--ivory);
+  background: var(--graphite-dark);
+  border: 1px solid #555;
   cursor: pointer;
   transition: .3s;
 }
 
 .filter-btn:hover,
 .filter-btn.active {
-  background: var(--gold);
-  color: #080808;
-  border-color: var(--gold);
+  background: var(--burgundy);
+  color: white;
+  border-color: var(--burgundy);
 }
 
 .portfolio-grid {
@@ -492,23 +536,23 @@ nav {
 
 .portfolio-item {
   position: relative;
-  min-height: 230px;
+  min-height: 250px;
   overflow: hidden;
-  background: #171717;
-  border: 1px solid #292929;
+  background: var(--graphite-dark);
+  border: 1px solid rgba(255,255,255,.08);
   cursor: pointer;
 }
 
 .portfolio-item img {
   width: 100%;
   height: 100%;
-  min-height: 230px;
+  min-height: 250px;
   object-fit: cover;
-  transition: .5s;
+  transition: .6s;
 }
 
 .portfolio-item:hover img {
-  transform: scale(1.07);
+  transform: scale(1.09);
 }
 
 .portfolio-item span {
@@ -516,8 +560,8 @@ nav {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 20px;
-  background: linear-gradient(transparent,#000);
+  padding: 25px 20px 18px;
+  background: linear-gradient(transparent,rgba(0,0,0,.95));
   font-weight: 700;
 }
 
@@ -525,16 +569,16 @@ nav {
   display: none;
 }
 
-/* =====================================
-   9. FULLSCREEN GALLERY
-===================================== */
+/* =================================
+   9. IMAGE GALLERY
+================================= */
 
 .lightbox {
   display: none;
   position: fixed;
   inset: 0;
   z-index: 2000;
-  background: rgba(0,0,0,.96);
+  background: rgba(15,15,15,.97);
   align-items: center;
   justify-content: center;
   padding: 30px;
@@ -548,14 +592,13 @@ nav {
   max-width: 90%;
   max-height: 80vh;
   object-fit: contain;
-  border: 1px solid #383838;
+  border: 1px solid var(--burgundy);
 }
 
 .lightbox-caption {
   position: absolute;
   bottom: 25px;
-  color: var(--gold);
-  font-size: 15px;
+  color: #D47B87;
 }
 
 .lightbox-close,
@@ -570,28 +613,19 @@ nav {
   padding: 10px;
 }
 
-.lightbox-close {
-  top: 15px;
-  right: 25px;
-}
-
-.lightbox-prev {
-  left: 15px;
-}
-
-.lightbox-next {
-  right: 15px;
-}
+.lightbox-close { top: 15px; right: 25px; }
+.lightbox-prev { left: 15px; }
+.lightbox-next { right: 15px; }
 
 .lightbox-close:hover,
 .lightbox-prev:hover,
 .lightbox-next:hover {
-  color: var(--gold);
+  color: var(--burgundy-light);
 }
 
-/* =====================================
+/* =================================
    10. FEATURED MEDIA
-===================================== */
+================================= */
 
 .featured-grid,
 .experience-grid,
@@ -605,9 +639,17 @@ nav {
 .featured-card,
 .experience-card,
 .testimonial-card {
-  background: #171717;
-  border: 1px solid #303030;
+  background: var(--panel);
+  border: 1px solid rgba(255,255,255,.08);
   padding: 22px;
+  transition: .3s;
+}
+
+.featured-card:hover,
+.experience-card:hover,
+.testimonial-card:hover {
+  border-color: var(--burgundy);
+  transform: translateY(-5px);
 }
 
 .featured-card h3,
@@ -620,7 +662,7 @@ nav {
 .featured-card p,
 .experience-card p,
 .testimonial-card p {
-  color: #aaa;
+  color: var(--muted);
   font-size: 14px;
 }
 
@@ -636,7 +678,7 @@ nav {
 
 .flickr-preview {
   aspect-ratio: 16/9;
-  background: linear-gradient(140deg,#322615,#111);
+  background: linear-gradient(140deg,#60202C,#252525);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -647,28 +689,39 @@ nav {
 .flickr-mark {
   font-size: 35px;
   font-weight: 800;
-  color: var(--gold);
+  color: var(--ivory);
 }
 
-/* =====================================
+/* =================================
    11. EXPERIENCE
-===================================== */
+================================= */
 
 .experience-card span,
 .why-grid strong {
-  color: var(--gold);
+  color: var(--burgundy-light);
   font-size: 22px;
 }
 
-/* =====================================
-   12. WHY WORK WITH US
-===================================== */
+/* =================================
+   12. WHY CHABORA
+================================= */
 
 .why-grid {
   display: grid;
   grid-template-columns: repeat(2,1fr);
   gap: 35px;
   margin-top: 40px;
+}
+
+.why-grid > div {
+  padding: 15px;
+  border-left: 2px solid var(--burgundy);
+  transition: .3s;
+}
+
+.why-grid > div:hover {
+  background: rgba(139,38,53,.08);
+  transform: translateX(5px);
 }
 
 .why-grid h3 {
@@ -679,24 +732,24 @@ nav {
   color: var(--muted);
 }
 
-/* =====================================
+/* =================================
    13. TESTIMONIALS
-===================================== */
+================================= */
 
 .quote {
   font: 700 55px 'Playfair Display',serif;
-  color: var(--gold);
+  color: var(--burgundy-light);
 }
 
 .small-note {
-  color: #777;
+  color: #888;
   font-size: 12px;
   margin-top: 20px;
 }
 
-/* =====================================
+/* =================================
    14. CONTACT
-===================================== */
+================================= */
 
 .contact-grid {
   display: grid;
@@ -710,21 +763,21 @@ nav {
 
 .contact-details p {
   margin-bottom: 20px;
-  color: #bbb;
+  color: #ccc;
 }
 
 .contact-details strong {
-  color: var(--gold);
+  color: #D47B87;
 }
 
 .contact-details a:hover {
-  color: var(--gold);
+  color: var(--burgundy-light);
 }
 
 .contact-form {
   padding: 30px;
-  background: #151515;
-  border: 1px solid #383026;
+  background: var(--panel);
+  border: 1px solid rgba(179,74,89,.35);
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -741,8 +794,8 @@ nav {
 .contact-form select {
   width: 100%;
   padding: 14px;
-  background: #090909;
-  border: 1px solid #383838;
+  background: #202020;
+  border: 1px solid #555;
   color: white;
   font: inherit;
   border-radius: 3px;
@@ -751,21 +804,23 @@ nav {
 .contact-form input:focus,
 .contact-form textarea:focus,
 .contact-form select:focus {
-  outline: 1px solid var(--gold);
+  outline: 1px solid var(--burgundy-light);
+  border-color: var(--burgundy);
 }
 
 .contact-form button {
   margin-top: 12px;
-  cursor: pointer;
 }
 
-/* =====================================
+/* =================================
    15. BOOKING
-===================================== */
+================================= */
 
 .booking {
   text-align: center;
-  background: linear-gradient(120deg,#21190e,#0b0b0b);
+  background:
+    radial-gradient(circle at 50% 0%,rgba(139,38,53,.22),transparent 65%),
+    var(--graphite-dark);
 }
 
 .booking-form {
@@ -775,7 +830,7 @@ nav {
 }
 
 .booking-inner p {
-  color: #bbb;
+  color: var(--muted);
   margin-bottom: 25px;
 }
 
@@ -783,14 +838,14 @@ nav {
   margin: 5px;
 }
 
-/* =====================================
+/* =================================
    16. FOOTER
-===================================== */
+================================= */
 
 footer {
   padding: 45px 0 20px;
-  background: #050505;
-  border-top: 1px solid #292929;
+  background: #171717;
+  border-top: 1px solid rgba(179,74,89,.4);
 }
 
 .footer-content {
@@ -801,7 +856,7 @@ footer {
 }
 
 .footer-content p {
-  color: #888;
+  color: #999;
   font-size: 13px;
   margin-top: 10px;
 }
@@ -818,43 +873,62 @@ footer {
 }
 
 .social-links a:hover {
-  color: var(--gold);
+  color: #D47B87;
 }
 
 .copyright {
-  border-top: 1px solid #292929;
+  border-top: 1px solid #444;
   margin-top: 30px;
   padding-top: 18px;
-  color: #777;
+  color: #888;
   font-size: 12px;
 }
 
-/* =====================================
-   17. FLOATING WHATSAPP
-===================================== */
+/* =================================
+   17. WHATSAPP
+================================= */
 
 .whatsapp-float {
   position: fixed;
   right: 22px;
   bottom: 22px;
   z-index: 900;
-  width: 54px;
-  height: 54px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: #25d366;
+  background: #25D366;
   color: #071b0d;
-  font-size: 29px;
+  font-size: 28px;
   box-shadow: 0 5px 25px #000;
+  transition: .3s;
 }
 
-/* =====================================
-   18. RESPONSIVE DESIGN
-===================================== */
+.whatsapp-float:hover {
+  transform: scale(1.12);
+}
+
+/* =================================
+   18. SCROLL ANIMATIONS
+================================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =================================
+   19. RESPONSIVE DESIGN
+================================= */
 
 @media(max-width:900px) {
-
   .editing-visual {
     width: 35%;
     right: 3%;
@@ -867,7 +941,6 @@ footer {
   .testimonial-grid {
     grid-template-columns: repeat(2,1fr);
   }
-
 }
 
 @media(max-width:700px) {
@@ -881,7 +954,7 @@ footer {
   }
 
   .logo {
-    font-size: 20px;
+    font-size: 19px;
   }
 
   .menu-toggle {
@@ -895,10 +968,10 @@ footer {
     left: 0;
     width: 100%;
     padding: 25px;
-    background: #080808;
+    background: #252525;
     flex-direction: column;
     align-items: flex-start;
-    border-bottom: 1px solid #333;
+    border-bottom: 2px solid var(--burgundy);
   }
 
   .nav-links.active {
@@ -907,6 +980,7 @@ footer {
 
   .hero {
     min-height: 85vh;
+    background-position: 60% center;
   }
 
   .hero h1 {
@@ -961,22 +1035,12 @@ footer {
     max-height: 70vh;
   }
 
-  .lightbox-prev {
-    left: 0;
-  }
-
-  .lightbox-next {
-    right: 0;
-  }
-
   .footer-content {
     flex-direction: column;
   }
-
 }
 
 @media(max-width:400px) {
-
   .hero-actions {
     flex-direction: column;
     align-items: flex-start;
@@ -989,7 +1053,15 @@ footer {
   .contact-form {
     padding: 18px;
   }
+}
 
+@media(prefers-reduced-motion:reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
 }
 
 </style>
@@ -997,9 +1069,7 @@ footer {
 
 <body>
 
-<!-- =====================================
-     NAVIGATION
-===================================== -->
+<!-- NAVIGATION -->
 
 <header>
   <div class="container">
@@ -1018,6 +1088,7 @@ footer {
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#portfolio">Portfolio</a>
+        <a href="#featured">Featured</a>
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
       </div>
@@ -1028,14 +1099,11 @@ footer {
 
 <main>
 
-<!-- =====================================
-     HERO
-===================================== -->
+<!-- HERO -->
 
 <section class="hero" id="home">
 
   <div class="container">
-
     <div class="hero-content">
 
       <div class="section-label">
@@ -1067,7 +1135,7 @@ footer {
   <div class="editing-visual">
 
     <div class="timeline-top">
-      <span>CREATIVE STUDIO</span>
+      <span>CHABORA CREATIVE STUDIO</span>
       <span>4K • 24FPS</span>
     </div>
 
@@ -1085,12 +1153,11 @@ footer {
       </div>
 
       <div class="audio-track" id="waveform"></div>
-
       <div class="playhead"></div>
 
     </div>
 
-    <div style="color:#aaa;font-size:10px;margin-top:12px">
+    <div style="color:#bbb;font-size:10px;margin-top:12px">
       EDITING • STORYTELLING • PRODUCTION
     </div>
 
@@ -1098,9 +1165,7 @@ footer {
 
 </section>
 
-<!-- =====================================
-     ABOUT
-===================================== -->
+<!-- ABOUT -->
 
 <section id="about">
 
@@ -1109,7 +1174,7 @@ footer {
     <div class="about-image">
       <div>
         <strong>Ideas into Impact.</strong>
-        <p style="color:#aaa">The Chabora creative vision</p>
+        <p>The Chabora creative vision</p>
       </div>
     </div>
 
@@ -1119,7 +1184,7 @@ footer {
 
       <h2 class="section-title">
         Creative thinking.<br>
-        <span class="gold">Meaningful storytelling.</span>
+        <span class="burgundy">Meaningful storytelling.</span>
       </h2>
 
       <p class="section-copy">
@@ -1154,9 +1219,7 @@ footer {
 
 </section>
 
-<!-- =====================================
-     SERVICES
-===================================== -->
+<!-- SERVICES -->
 
 <section class="services" id="services">
 
@@ -1209,13 +1272,12 @@ footer {
       </article>
 
     </div>
+
   </div>
 
 </section>
 
-<!-- =====================================
-     PORTFOLIO
-===================================== -->
+<!-- PORTFOLIO -->
 
 <section id="portfolio">
 
@@ -1246,47 +1308,47 @@ footer {
     <div class="portfolio-grid" id="portfolioGrid">
 
       <div class="portfolio-item" data-category="photography">
-        <img src="1.jpeg" alt="Photography project">
+        <img src="1.jpeg" alt="Photography project" loading="lazy">
         <span>Photography</span>
       </div>
 
       <div class="portfolio-item" data-category="videography">
-        <img src="2.jpeg" alt="Creative media project">
+        <img src="2.jpeg" alt="Creative media project" loading="lazy">
         <span>Creative Production</span>
       </div>
 
       <div class="portfolio-item" data-category="events">
-        <img src="3.jpeg" alt="Event coverage">
+        <img src="3.jpeg" alt="Event coverage" loading="lazy">
         <span>Event Coverage</span>
       </div>
 
       <div class="portfolio-item" data-category="photography">
-        <img src="4.jpeg" alt="Media project">
+        <img src="4.jpeg" alt="Media project" loading="lazy">
         <span>Visual Storytelling</span>
       </div>
 
       <div class="portfolio-item" data-category="photography">
-        <img src="5.jpeg" alt="Photography work">
+        <img src="5.jpeg" alt="Photography work" loading="lazy">
         <span>Photography</span>
       </div>
 
       <div class="portfolio-item" data-category="videography">
-        <img src="6.jpeg" alt="Creative project">
+        <img src="6.jpeg" alt="Creative project" loading="lazy">
         <span>Media & Production</span>
       </div>
 
       <div class="portfolio-item" data-category="events">
-        <img src="7.jpeg" alt="Event photography">
+        <img src="7.jpeg" alt="Event photography" loading="lazy">
         <span>Events</span>
       </div>
 
       <div class="portfolio-item" data-category="branding">
-        <img src="8.jpeg" alt="Creative work">
+        <img src="8.jpeg" alt="Creative work" loading="lazy">
         <span>Creative Direction</span>
       </div>
 
       <div class="portfolio-item" data-category="branding">
-        <img src="9.jpeg" alt="Brand project">
+        <img src="9.jpeg" alt="Brand project" loading="lazy">
         <span>Brand Stories</span>
       </div>
 
@@ -1296,7 +1358,7 @@ footer {
 
 </section>
 
-<!-- FULLSCREEN IMAGE GALLERY -->
+<!-- IMAGE GALLERY -->
 
 <div class="lightbox" id="lightbox">
 
@@ -1318,9 +1380,7 @@ footer {
 
 </div>
 
-<!-- =====================================
-     FEATURED MEDIA
-===================================== -->
+<!-- FEATURED MEDIA -->
 
 <section class="featured" id="featured">
 
@@ -1372,9 +1432,7 @@ footer {
       <article class="featured-card">
 
         <div class="flickr-preview">
-
           <div class="flickr-mark">flickr</div>
-
           <p>Photography collection</p>
 
           <a
@@ -1384,7 +1442,6 @@ footer {
             rel="noopener">
             View Flickr Album
           </a>
-
         </div>
 
         <h3>Photography Collection</h3>
@@ -1398,9 +1455,7 @@ footer {
 
 </section>
 
-<!-- =====================================
-     EXPERIENCE
-===================================== -->
+<!-- EXPERIENCE -->
 
 <section class="experience" id="experience">
 
@@ -1459,11 +1514,9 @@ footer {
 
 </section>
 
-<!-- =====================================
-     WHY CHABORA
-===================================== -->
+<!-- WHY CHABORA -->
 
-<section class="why">
+<section class="why" id="why">
 
   <div class="container">
 
@@ -1503,9 +1556,7 @@ footer {
 
 </section>
 
-<!-- =====================================
-     TESTIMONIALS
-===================================== -->
+<!-- TESTIMONIALS -->
 
 <section class="testimonials" id="testimonials">
 
@@ -1546,9 +1597,7 @@ footer {
 
 </section>
 
-<!-- =====================================
-     CONTACT
-===================================== -->
+<!-- CONTACT -->
 
 <section class="contact" id="contact">
 
@@ -1636,9 +1685,7 @@ footer {
 
 </section>
 
-<!-- =====================================
-     BOOKING
-===================================== -->
+<!-- BOOKING -->
 
 <section class="booking" id="booking">
 
@@ -1704,11 +1751,7 @@ footer {
 
       <label>Event / Project Date</label>
 
-      <input
-        type="date"
-        id="bookingDate"
-        name="date"
-        required>
+      <input type="date" id="bookingDate" name="date" required>
 
       <label>Event / Project Location</label>
 
@@ -1762,9 +1805,7 @@ footer {
 
 </section>
 
-<!-- =====================================
-     FINAL BOOKING CTA
-===================================== -->
+<!-- FINAL CALL TO ACTION -->
 
 <section class="booking">
 
@@ -1798,9 +1839,7 @@ footer {
 
 </main>
 
-<!-- =====================================
-     FOOTER
-===================================== -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -1839,9 +1878,7 @@ footer {
   </div>
 
   <div class="container copyright">
-
     © <span id="year"></span> Chabora Ventures. All rights reserved.
-
   </div>
 
 </footer>
@@ -1857,24 +1894,25 @@ footer {
   ☏
 </a>
 
-<!-- =====================================
-     JAVASCRIPT
-===================================== -->
+<!-- JAVASCRIPT -->
 
 <script>
 
-/* MOBILE MENU */
+/* MOBILE NAVIGATION */
 
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
 menuToggle.addEventListener("click", () => {
   navLinks.classList.toggle("active");
+  menuToggle.textContent =
+    navLinks.classList.contains("active") ? "✕" : "☰";
 });
 
 document.querySelectorAll(".nav-links a").forEach(link => {
   link.addEventListener("click", () => {
     navLinks.classList.remove("active");
+    menuToggle.textContent = "☰";
   });
 });
 
@@ -1900,7 +1938,6 @@ for (let i = 0; i < 65; i++) {
     (Math.random() * .7) + "s";
 
   waveform.appendChild(bar);
-
 }
 
 /* PORTFOLIO FILTERS */
@@ -1989,20 +2026,21 @@ portfolioItems.forEach(item => {
 
 });
 
-document.getElementById("lightboxClose").addEventListener("click", closeGallery);
+document.getElementById("lightboxClose").addEventListener(
+  "click", closeGallery
+);
 
-document.getElementById("lightboxPrev").addEventListener("click", () => {
-  showGalleryImage(currentImageIndex - 1);
-});
+document.getElementById("lightboxPrev").addEventListener(
+  "click", () => showGalleryImage(currentImageIndex - 1)
+);
 
-document.getElementById("lightboxNext").addEventListener("click", () => {
-  showGalleryImage(currentImageIndex + 1);
-});
+document.getElementById("lightboxNext").addEventListener(
+  "click", () => showGalleryImage(currentImageIndex + 1)
+);
 
 function closeGallery() {
 
   lightbox.classList.remove("active");
-
   document.body.style.overflow = "";
 
 }
@@ -2019,9 +2057,7 @@ document.addEventListener("keydown", event => {
 
   if (!lightbox.classList.contains("active")) return;
 
-  if (event.key === "Escape") {
-    closeGallery();
-  }
+  if (event.key === "Escape") closeGallery();
 
   if (event.key === "ArrowRight") {
     showGalleryImage(currentImageIndex + 1);
@@ -2076,7 +2112,37 @@ I look forward to hearing from you.`;
 
 });
 
+/* SCROLL REVEAL ANIMATIONS */
+
+const revealElements = document.querySelectorAll(
+  "section:not(.hero), .service-card, .portfolio-item, .experience-card, .testimonial-card"
+);
+
+revealElements.forEach(element => {
+  element.classList.add("reveal");
+});
+
+const revealObserver = new IntersectionObserver(entries => {
+
+  entries.forEach(entry => {
+
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      revealObserver.unobserve(entry.target);
+    }
+
+  });
+
+}, {
+  threshold: 0.12
+});
+
+revealElements.forEach(element => {
+  revealObserver.observe(element);
+});
+
 </script>
 
 </body>
 </html>
+```
